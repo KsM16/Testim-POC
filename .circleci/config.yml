@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  testim-tests:
+    docker:
+      - image: testimio/docker-cli
+    environment:
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+    steps:
+      - checkout
+      - run: mkdir -p $CIRCLE_TEST_REPORTS/testim/
+      - run:
+          name: Run Testim Tests
+          command: testim --token "$TESTIM_TOKEN" --project "$TESTIM_PROJECT_ID" --grid "Testim-HA-Grid" --name "StableLocators" --name "SauceDemo_2" --name "Demo_2" --report-file $CIRCLE_TEST_REPORTS/testim/results.xml
+      - store_artifacts:
+          path: /tmp/circleci-test-results
+      - store_test_results:
+          path: /tmp/circleci-test-results
+
+workflows:
+  version: 2
+  testim_workflow:
+    jobs:
+      - testim-tests
