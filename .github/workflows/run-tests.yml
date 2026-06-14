@@ -27,4 +27,4 @@ jobs:
 
        
       - name: Run Testim Tests
-        run: testim --token "${{ secrets.TESTIM_TOKEN }}" --project "${{ secrets.TESTIM_PROJECT_ID }}" --grid "Testim-HA-Grid" --name "StableLocators" --name "SauceDemo_2" --name "Demo_2"
+        run: testim --token "${{ secrets.TESTIM_TOKEN }}" --project "${{ secrets.TESTIM_PROJECT_ID }}" --grid "Testim-HA-Grid" --name "Jewel_UI-Automation" --name "JEWEL_API_final"
