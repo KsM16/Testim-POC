@@ -1,1 +1,1 @@
-POC on the web automation platform - Testim
+POC on the web automation platform - Testim POC
